@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from './context/ThemeContext';
+import ThemeDisplay from './components/ThemeDisplay';
+import ThemeToggle from './components/ThemeToggle';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <h1>Cambiador de Tema 🌞🌚</h1>
+        <img src='https://web.archive.org/web/20091027154758/http://www.geocities.com/jacquelinehowett/sunblk.gif' alt='sol'></img>
+        <img src='https://web.archive.org/web/20090831163129/http://geocities.com/joerileyus/GIF/manmoon.gif' alt='luna'></img>
+        <ThemeDisplay />
+        <ThemeToggle />
+      </div>
+    </ThemeProvider>
   );
 }
 
